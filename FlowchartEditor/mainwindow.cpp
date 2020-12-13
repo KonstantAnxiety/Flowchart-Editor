@@ -22,7 +22,11 @@ MainWindow::~MainWindow()
 {
     delete chart;
     delete fileMenu;
+    delete newAct;
     delete exportAct;
+    delete openAct;
+    delete saveAct;
+    delete saveAsAct;
     delete ui;
 }
 

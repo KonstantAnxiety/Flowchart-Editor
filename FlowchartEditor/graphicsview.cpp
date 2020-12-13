@@ -23,11 +23,9 @@ GraphicsView::GraphicsView(QWidget *parent)
 
     nodeToAdd = 0;
 
-    timer = new QTimer();               // Инициализируем Таймер
-    //timer->setSingleShot(true);
-    // Подключаем СЛОТ для отрисовки к таймеру
+    timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotAlarmTimer()));
-    timer->start(20);                   // Стартуем таймер на 50 миллисекунд
+    timer->start(20);
 
     grid = new QGraphicsItemGroup();
     addGrid();
@@ -45,7 +43,10 @@ GraphicsView::GraphicsView(QWidget *parent)
 
 GraphicsView::~GraphicsView()
 {
-
+    delete timer;
+    delete scene;
+    delete grid;
+    delete connections;
 }
 
 void GraphicsView::addNode(int id)
@@ -171,7 +172,6 @@ void GraphicsView::addLabel(const QString &str, double x, double y,
     io->setDefaultTextColor(color);
     io->setZValue(7);
     scene->addItem(io);
-    labels.push_back(io);
 }
 
 void GraphicsView::mousePressEvent(QMouseEvent *event)

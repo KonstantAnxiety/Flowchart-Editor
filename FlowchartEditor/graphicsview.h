@@ -39,10 +39,8 @@ private:
     QTimer *timer;
     QGraphicsScene *scene;
     Vector<std::shared_ptr<Node>> nodes;
-    Vector<std::shared_ptr<QGraphicsItemGroup>> groups;
     QGraphicsItemGroup *grid;
     QGraphicsItemGroup *connections;
-    Vector<QGraphicsItem*> labels;
     int nodeToAdd, nowMoving, lineDir;
     bool _pan, _line, saved;
     QString path;
