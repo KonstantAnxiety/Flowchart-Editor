@@ -80,7 +80,7 @@ void MainWindow::saveFlowchart()
 
 void MainWindow::saveFlowchartAs()
 {
-    path = QFileDialog::getOpenFileName(this, "Save flowchart",
+    path = QFileDialog::getSaveFileName(this, "Save flowchart",
                                         QCoreApplication::applicationDirPath(),
                                         "text file (*.txt)" );
     if (!path.isEmpty())
